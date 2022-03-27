@@ -1,0 +1,1 @@
+locations = ["london","barcelona","islamabad"]
