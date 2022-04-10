@@ -1,38 +1,69 @@
-#import neverSleep
+import neverSleep
 import nextcord
-from nextcord.ext import commands
+from nextcord.ext import commands,tasks
+from itertools import cycle
 import os
-from config import TOKEN
+from startup import cls
+from keep_alive import keep_alive
 
-client = commands.Bot(command_prefix = "!" , intents=nextcord.Intents.all(),case_insensitive=True)       
+client = commands.Bot(command_prefix = "m!" , intents=nextcord.Intents.all(),case_insensitive=True)       
 client.remove_command('help')
 client.remove_command("purge")
 initial_extensions = []
 
 def cog_loader():
-  for filename in os.listdir("./events"):
+  for filename in os.listdir("./events/message"):
     if filename.endswith(".py"):
-      initial_extensions.append("events."+ filename[:-3])
-  for filename in os.listdir("./commands"):
+      initial_extensions.append("events.message."+ filename[:-3])
+  for filename in os.listdir("./events/member"):
     if filename.endswith(".py"):
-      initial_extensions.append("commands."+ filename[:-3])
-  for filename in os.listdir("./serverstats"):
+      initial_extensions.append("events.member."+ filename[:-3])
+  
+  for filename in os.listdir("./commands/Fun"):
     if filename.endswith(".py"):
-      initial_extensions.append("serverstats."+ filename[:-3])
+      initial_extensions.append("commands.Fun."+ filename[:-3])
+  for filename in os.listdir("./commands/Links"):
+    if filename.endswith(".py"):
+      initial_extensions.append("commands.Links."+ filename[:-3])
+  for filename in os.listdir("./commands/Naughty"):
+    if filename.endswith(".py"):
+      initial_extensions.append("commands.Naughty."+ filename[:-3])
+  for filename in os.listdir("./commands/Phrases"):
+    if filename.endswith(".py"):
+      initial_extensions.append("commands.Phrases."+ filename[:-3])
+  for filename in os.listdir("./commands/Utility"):
+    if filename.endswith(".py"):
+      initial_extensions.append("commands.Utility."+ filename[:-3])
+        
   if __name__ == '__main__':
     for extension in initial_extensions:
       client.load_extension(extension)
       
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
-
 cog_loader()
-  
+
+status = cycle([
+    'Anime.exe',
+    '!help',
+    'With you',
+    'Rocket League',
+    'Genshin Impact',
+    'Watching Anime',
+    'Listening to Anime',
+    'Chess',
+    'Rape Session',
+    'Waius Pouts'
+])
+
+@tasks.loop(seconds=1800)
+async def status_swap():
+    await client.change_presence(activity=nextcord.Game(next(status)))
+
 @client.event
 async def on_ready():
-  await client.change_presence(status=nextcord.Status.online ,activity=nextcord.Activity(type=nextcord.ActivityType.playing, name=f"Anime.exe"))
-  cls()
-  print('System online of {0.user}'.format(client))
+    cls()
+    print('{0.user} is now online'.format(client))
+    status_swap.start()
 
-#neverSleep.awake('https://mai-1.moazlion.repl.co/', False)
-client.run(TOKEN)
+neverSleep.awake('https://mai-1.moazlion.repl.co/', False)
+keep_alive()
+client.run(os.getenv('TOKEN'))

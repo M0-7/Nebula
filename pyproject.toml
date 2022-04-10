@@ -11,6 +11,7 @@ Flask = "^2.0.3"
 requests = "^2.27.1"
 nextcord = "^2.0.0-alpha.10"
 asyncpraw = "^7.5.0"
+psutil = "^5.9.0"
 
 
 [tool.poetry.dev-dependencies]

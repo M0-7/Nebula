@@ -1,3 +1,4 @@
+#Colors
 green = 0x41ff00
 blue = 0x3498db
 purple = 0x9b59b6
@@ -14,12 +15,13 @@ blurple = 0x7289da
 greyple = 0x99aab5
 teal = 0x1abc9c
 dark_teal = 0x11806a
+white = 0xffffff
+
+#Channel logs id
+msglogs = 878668000314654750
+userlogs = 898787267034902549
+serverlogs = 835037950777360404
+joinLeave = 833941194060595210
 
 
-
-
-
-
-
-TOKEN = "ODcwMjc5MTU0NTg5OTIxMzQx.YQKcnw.zBUOzZH1DS1ZWpiJLwNJCsLeWhE"
 
