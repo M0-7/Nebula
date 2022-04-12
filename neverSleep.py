@@ -10,7 +10,8 @@ def home():
     return "Bot online"
 
 def run():
-  app.run(host='0.0.0.0',port=random.randint(2000,9000)) 
+  app.run(host='0.0.0.0',port=random.randint(2000,9000))
+    
 def ping(target, debug):
     while(True):
         r = requests.get(target)
