@@ -3,7 +3,7 @@ from nextcord.ext import commands
 from config import green
 import datetime
 
-help_image = "https://media.discordapp.net/attachments/870316216571543552/927992961646616636/IMG_2763.jpg"
+help_img = "https://media.discordapp.net/attachments/870316216571543552/927992961646616636/IMG_2763.jpg"
 
 class Help(commands.Cog): 
     def __init__(self, client): 
@@ -14,7 +14,7 @@ class Help(commands.Cog):
     async def help(self,ctx):
       ehelp=nextcord.Embed(title="**Mai Commands**", description="__Boku Wa Tobi__ **:)**", color=green)
       ehelp.set_footer(text="For more help dm Moaz#3688", icon_url=f"{ctx.author.avatar}")
-      ehelp.set_image(url=help_image)
+      ehelp.set_image(url=help_img)
       ehelp.add_field(name="📚 **Phrases[4]**",value="`!aniquote`, `!quote`, `!joke`, `!roast`", inline=False)
       ehelp.add_field(name="😊 **Fun[5]**", value="`!hug`, `!kiss`, `!8ball`, `!meme`, `!#1`", inline=False)
       ehelp.add_field(name="😏 **Naughty[5]**", value="`!penis`, `!gtest` , `!rate`, `!spank`, `!#69`", inline=False)

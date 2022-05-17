@@ -47,10 +47,13 @@ status = cycle([
     'With you',
     'Rocket League',
     'Genshin Impact',
-    'Watching Anime',
-    'Listening to Anime',
+    'Elden Ring',
+    'Apex Legemds',
+    'Anime',
     'Chess',
     'Rape Session',
+    'Hanime',
+    'Touching Grass',
     'Waius Pouts'
 ])
 
