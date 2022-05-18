@@ -8,8 +8,7 @@ class Moaz(commands.Cog):
     @commands.command(name="moaz")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def moaz(self, ctx):
-        await ctx.send("""Here is Moaz's profiles he wants you to see:
-         https://myanimelist.net/profile/Moazlion""")
+        await ctx.send("https://moazlion.repl.co")
 
     @moaz.error
     async def moaz_error(self, ctx, error):

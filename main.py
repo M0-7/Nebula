@@ -67,6 +67,6 @@ async def on_ready():
     print('{0.user} is now online'.format(client))
     status_swap.start()
 
-neverSleep.awake('https://mai-1.moazlion.repl.co/', False)
+neverSleep.awake('https://Hayasaka.moazlion.repl.co/', False)
 keep_alive()
 client.run(os.getenv('TOKEN'))
