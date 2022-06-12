@@ -43,7 +43,7 @@ cog_loader()
 
 status = cycle([
     'Anime.exe',
-    '!help',
+    'm!help',  
     'With you',
     'Rocket League',
     'Genshin Impact',
