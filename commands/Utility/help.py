@@ -19,7 +19,7 @@ class Help(commands.Cog):
       ehelp.add_field(name="😊 **Fun[5]**", value="`m!hug`, `m!kiss`, `m!8ball`, `m!meme`, `m!#1`", inline=False)
       ehelp.add_field(name="😏 **Naughty[5]**", value="`m!penis`, `m!gtest` , `m!rate`, `m!spank`, `m!#69`", inline=False)
       ehelp.add_field(name="🔗 **Links[4]**", value="`m!moaz`, `m!reyan`, `m!bilal`, `m!shayan`", inline=False)
-      ehelp.add_field(name="🧩 **Utility[5]**", value="`m!ping`, `!lock`, `m!unlock`, `m!help`, `m!avatar`")
+      ehelp.add_field(name="🧩 **Utility[5]**", value="`m!ping`, `!lock`, `m!unlock`, `m!help`, `m!avatar`, `m!restart`")
       ehelp.timestamp = datetime.datetime.utcnow()
       ehelp.set_thumbnail(url=ctx.guild.icon)
       await ctx.send(embed=ehelp)
