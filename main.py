@@ -1,10 +1,10 @@
 import neverSleep
-import nextcord
+import nextcord,os,atexit
 from nextcord.ext import commands,tasks
 from itertools import cycle
-import os
 from startup import cls
 from keep_alive import keep_alive
+from config import statuschannelid
 
 client = commands.Bot(command_prefix = "m!" , intents=nextcord.Intents.all(),case_insensitive=True)       
 client.remove_command('help')
@@ -65,8 +65,16 @@ async def status_swap():
 async def on_ready():
     cls()
     print('{0.user} is now online'.format(client))
+    statchannel = client.get_channel(statuschannelid)
+    await statchannel.send("Bot is up!")
     status_swap.start()
 
-neverSleep.awake('https://Hayasaka.moazlion.repl.co/', False)
+@client.event
+async def statoff():
+    statchannel = client.get_channel(statuschannelid)
+    await statchannel.send("Bot is down!")
+
+neverSleep.awake('https://rags.moazlion.repl.co/', False)
 keep_alive()
+atexit.register(statoff)
 client.run(os.getenv('TOKEN'))
