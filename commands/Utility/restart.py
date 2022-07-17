@@ -2,7 +2,6 @@ import nextcord
 from nextcord.ext import commands
 from config import green
 import os,sys
-from config import statuschannelid
 
 class Restart(commands.Cog):
     def __init__(self, client): 
