@@ -13,8 +13,6 @@ class Restart(commands.Cog):
     async def restart(self, ctx):
         embed = nextcord.Embed(title="Restarting myself ⏳",description="Give  me a couple of seconds :).<#870316216571543552> for status.",color = green)
         await ctx.send(embed=embed)
-        statchannel = self.client.get_channel(statuschannelid)
-        await statchannel.send("Bot is down!")
         os.system("clear")
         os.execv(sys.executable, ['python'] + sys.argv)
         
