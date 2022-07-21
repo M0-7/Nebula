@@ -262,7 +262,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "nextcord"
-version = "2.0.0a10"
+version = "2.0.0"
 description = "A Python wrapper for the Discord API forked from discord.py"
 category = "main"
 optional = false
@@ -702,7 +702,7 @@ multidict = [
     {file = "multidict-6.0.2.tar.gz", hash = "sha256:5ff3bd75f38e4c43f1f470f2df7a4d430b821c4ce22be384e1459cb57d6bb013"},
 ]
 nextcord = [
-    {file = "nextcord-2.0.0a10.tar.gz", hash = "sha256:5126ac396748df07df7c32c2d4dadf060d29f794c35762609228e19b85a58cdf"},
+    {file = "nextcord-2.0.0.tar.gz", hash = "sha256:863f569239182126777b86731b39d3f7697fe9ca6c3458ec7011fdfd0ebef590"},
 ]
 numpy = [
     {file = "numpy-1.23.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:b15c3f1ed08df4980e02cc79ee058b788a3d0bef2fb3c9ca90bb8cbd5b8a3a04"},
