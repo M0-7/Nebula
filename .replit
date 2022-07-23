@@ -1,0 +1,6 @@
+language="python3"
+run="python3 main.py"
+entrypoint="index.html"
+
+[Nix]
+channel = "stable-21_11"
