@@ -18,10 +18,10 @@ dark_teal = 0x11806a
 white = 0xffffff
 
 #Channel logs id
-msglogs = 878668000314654750
-userlogs = 898787267034902549
-serverlogs = 835037950777360404
-joinLeave = 833941194060595210
+msglogs = 
+userlogs = 
+serverlogs = 
+joinLeave = 
 
 
 
