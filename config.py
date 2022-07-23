@@ -18,9 +18,7 @@ dark_teal = 0x11806a
 white = 0xffffff
 
 #Channel logs id
-msglogs = 
-userlogs = 
-serverlogs = 
+msglogs =  
 joinLeave = 
 
 
