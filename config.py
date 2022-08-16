@@ -18,11 +18,11 @@ dark_teal = 0x11806a
 white = 0xffffff
 
 #Channel logs id
-msglogs =  1009044364804231190
-joinLeave = 1009044364804231190
+msglogs = 
+joinLeave = 
 
 
 #Bot Token
-TOKEN ="OTE0MTY4NjEyNzUzOTI0MDk4.GRYXux.mB5AdZzZkoeDcnKIqpCiIxEKxZ-mIa3_-Arg_U"
+TOKEN =""
 
 

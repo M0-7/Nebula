@@ -69,4 +69,4 @@ async def on_ready():
 
 neverSleep.awake('https://rags.moazlion.repl.co/', False)
 keep_alive()
-client.run(os.getenv('TOKEN'))
+client.run(TOKEN)
