@@ -4,6 +4,7 @@ from nextcord.ext import commands,tasks
 from itertools import cycle
 from startup import cls
 from keep_alive import keep_alive
+from config import TOKEN
 
 client = commands.Bot(command_prefix = "m!" , intents=nextcord.Intents.all(),case_insensitive=True)       
 client.remove_command('help')
