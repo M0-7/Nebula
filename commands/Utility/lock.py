@@ -9,6 +9,8 @@ class Unilock(nextcord.ui.View):
 
     @nextcord.ui.button(label="Unlock", style=nextcord.ButtonStyle.red)
     async def confirm(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
+        drole = nextcord.utils.get(ctx.guild.roles, name = 'Sasta Sherlock')
+        await ctx.channel.set_permissions(drole, view_channel=True)
         await interaction.response.send_message("Channel unlocked, Shanny aka 🤡 can see you! Be careful out there.", ephemeral=True)
         self.value = True
         self.stop()
