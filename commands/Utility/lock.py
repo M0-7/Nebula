@@ -25,7 +25,7 @@ class Lock(commands.Cog):
     async def lock(self, ctx):
         drole = nextcord.utils.get(ctx.guild.roles, name = 'Sasta Sherlock')
         await ctx.channel.set_permissions(drole, view_channel=False)
-        embed = nextcord.Embed(title="Channel locked",description="Do *!unlock* to open the channel again or press the damn button below!",color = green)
+        embed = nextcord.Embed(title="Channel locked",description="Do *m!unlock* to open the channel or press the button below!",color = green)
         view=Unilock()
         msg = await ctx.send(embed=embed,view=view)
         await view.wait()
