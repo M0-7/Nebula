@@ -48,7 +48,7 @@ status = cycle([
     'Rocket League',
     'Genshin Impact',
     'Elden Ring',
-    'Apex Legemds',
+    'Apex Legends',
     'Anime',
     'Chess',
     'Rape Session',
