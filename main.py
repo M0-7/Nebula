@@ -67,6 +67,6 @@ async def on_ready():
     print('{0.user} is now online'.format(client))
     status_swap.start()
 
-neverSleep.awake('https://rags.moazlion.repl.co/', False)
+neverSleep.awake('https://Nebula.moazlion.repl.co/', False)
 keep_alive()
 client.run(TOKEN)
