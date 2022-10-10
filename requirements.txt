@@ -27,6 +27,6 @@ update-checker==0.18.0
 urllib3==1.26.12
 Werkzeug==2.2.2
 yarl==1.8.1
-zipp==3.8.1
+zipp==3.9.0
 
 #No versions for some packages to be more compatible
