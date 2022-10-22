@@ -15,7 +15,7 @@ class Help(commands.Cog):
       """Shows the commands for the bot"""
       ehelp=nextcord.Embed(title="**Nebula Commands**", description="__Boku Wa Tobi__ **:)**", color=green)
       ehelp.set_image(url=help_img)
-      ehelp.add_field(name="😊 **Fun[5]**", value="``m!aniquote`, m!hug`, `m!kiss`, `m!8ball`", inline=False)
+      ehelp.add_field(name="😊 **Fun[5]**", value="`m!aniquote`, `m!hug`, `m!kiss`, `m!8ball`", inline=False)
       ehelp.add_field(name="😏 **Naughty[5]**", value="`m!penis`, `m!gtest` , `m!rate`, `m!spank`", inline=False)
       ehelp.add_field(name="🔗 **Links[4]**", value="`m!moaz`, `m!reyan`, `m!bilal`, `m!shayan`", inline=False)
       ehelp.add_field(name="🧩 **Utility[5]**", value="`m!ping`, `!lock`, `m!unlock`, `m!help`, `m!avatar`, `m!restart`", inline=False)
