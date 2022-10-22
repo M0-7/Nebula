@@ -1,3 +1,4 @@
+from nextcord import SlashOption,Interaction
 import nextcord
 from nextcord.ext import commands
 from api.aniquote import character,quote
@@ -7,13 +8,13 @@ class Aniquote(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'aniquote',aliases = ['aq'])
+    @nextcord.slash_command(name = 'aniquote')
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def aniquote(self, ctx):
+    async def aniquote(self, interaction: nextcord.Interaction):
       """Sends an anime quote"""
       embed=nextcord.Embed(description=(f"**{quote}**"),color=green)
       embed.set_footer(text=f"~{character}")
-      await ctx.send(embed=embed)
+      await interaction.response.send_message(embed=embed)
 
     @aniquote.error
     async def aniquote_error(self, ctx, error):

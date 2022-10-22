@@ -1,19 +1,21 @@
 import nextcord
 from nextcord.ext import commands
 from config import green
+from nextcord import SlashOption,Interaction
+
 spank_gif = "https://media.giphy.com/media/xX9tcQCgPRmDK/giphy.gif"
 
 class Spank(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'spank')
+    @nextcord.slash_command(name = 'spank')
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def spank(self, ctx,*,Member):
+    async def spank(self, interaction:nextcord.Interaction,arg:str = SlashOption(description="Who is it")):
       """Hits someone in the ass"""
-      embed = nextcord.Embed(description=(f"{ctx.author.mention} *spanks* {Member} 😏"),color=green)
+      embed = nextcord.Embed(description=(f"{interaction.user.mention} *spanks* {arg} 😏"),color=green)
       embed.set_image(url=spank_gif)
-      await ctx.send(embed=embed)
+      await interaction.response.send_message(embed=embed)
 
     @spank.error
     async def spank_error(self, ctx, error):

@@ -1,15 +1,16 @@
 import nextcord
+from nextcord import Interaction
 from nextcord.ext import commands
 
 class Bilal(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = "bilal")
+    @nextcord.slash_command(name = "bilal")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def bilal(self,ctx):
+    async def bilal(self,interaction:nextcord.Interaction):
         """Bilal's profile"""
-        await ctx.send("""Here is Bilal´s instagram account:
+        await interaction.response.send_message("""Here is Bilal´s instagram account:
 https://www.instagram.com/bilal_amin123/""")
 
     @bilal.error

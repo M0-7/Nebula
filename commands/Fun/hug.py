@@ -1,4 +1,5 @@
 import nextcord
+from nextcord import SlashOption,Interaction
 from nextcord.ext import commands
 from config import green
 
@@ -8,13 +9,13 @@ class Hug(commands.Cog):
     def __init__(self, client): 
          self.client = client
       
-    @commands.command(name = "hug")
+    @nextcord.slash_command(name = "hug")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def hug(self, ctx,*,Member):
+    async def hug(self, interaction: nextcord.Interaction,arg: str = SlashOption(description="Add a person")):
         """Aww your feeling lonely?"""
-        embed = nextcord.Embed(description=(f"{ctx.author.mention} *hugs* {Member} 🤗 "),colour=green)
+        embed = nextcord.Embed(description=(f"{interaction.user.mention} *hugs* {arg} 🤗 "),colour=green)
         embed.set_image(url=hug_gif)
-        await ctx.send(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
     @hug.error
     async def hug_error(self, ctx, error):

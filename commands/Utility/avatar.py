@@ -1,19 +1,20 @@
 import nextcord
 from nextcord.ext import commands
 from config import green
+from nextcord import SlashOption,Interaction
 
 class Avatars(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = "avatar")
+    @nextcord.slash_command(name = "avatar")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def avatar(self,ctx,*,avamember:nextcord.Member=None):
+    async def avatar(self,interaction:nextcord.Interaction, arg:nextcord.Member = SlashOption(description="Add a member")):
       """Returns the avatar of the user"""
-      pfp = avamember.avatar
-      embed = nextcord.Embed(title=f"Avatar of {avamember}",color=green)
+      pfp = arg.avatar
+      embed = nextcord.Embed(title=f"Avatar of {arg}",color=green)
       embed.set_image(url=pfp)
-      await ctx.send(embed=embed)
+      await interaction.response.send_message(embed=embed)
 
     @avatar.error
     async def avatar_error(self, ctx, error):

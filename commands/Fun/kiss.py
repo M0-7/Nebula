@@ -1,4 +1,5 @@
 import nextcord
+from nextcord import SlashOption,Interaction
 from nextcord.ext import commands
 from config import green
 
@@ -8,13 +9,13 @@ class Kiss(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'kiss')
+    @nextcord.slash_command(name = 'kiss')
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def kiss(self, ctx,Member):
+    async def kiss(self, interaction:nextcord.Interaction,arg:str = SlashOption(description="Add a person")):
       """Gives you a kiss"""
-      embed = nextcord.Embed(description=(f"{ctx.author.mention} *kisses* {Member} 😘  "),colour=green)
+      embed = nextcord.Embed(description=(f"{interaction.user.mention} *kisses* {arg} 😘  "),colour=green)
       embed.set_image(url=kiss_gif)
-      await ctx.send(embed=embed)
+      await interaction.response.send_message(embed=embed)
 
     @kiss.error
     async def kiss_error(self, ctx, error):

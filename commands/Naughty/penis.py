@@ -1,20 +1,21 @@
 import nextcord
 from nextcord.ext import commands
 from config import green
+from nextcord import Interaction
 import random
 
 class Penis(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'penis')
+    @nextcord.slash_command(name = 'penis')
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def penis(self, ctx):
+    async def penis(self, interaction:nextcord.Interaction):
         """Find out how long your shalonga balonga is"""
         rank = random.randint(1,10)
         penis = "="
         ema = nextcord.Embed(description=(f"Your penis 8{penis*rank}D, {rank} inches"),color=green)
-        await ctx.send(embed=ema)
+        await interaction.response.send_message(embed=ema)
 
     @penis.error
     async def penis_error(self, ctx, error):

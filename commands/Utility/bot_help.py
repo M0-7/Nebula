@@ -11,7 +11,7 @@ class Help(commands.Cog):
     
     @nextcord.slash_command(name = "help")
     @commands.cooldown(1, 10, commands.BucketType.guild)
-    async def help(self ,interaction: nextcord.Interaction):
+    async def help(self, interaction: nextcord.Interaction):
       """Shows the commands for the bot"""
       ehelp=nextcord.Embed(title="**Nebula Commands**", description="__Boku Wa Tobi__ **:)**", color=green)
       ehelp.set_image(url=help_img)

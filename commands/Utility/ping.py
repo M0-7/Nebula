@@ -9,12 +9,12 @@ class Ping(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command()
+    @nextcord.slash_command()
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def ping(self, ctx):
+    async def ping(self, interaction:nextcord.Interaction):
         """Shows latency of the bot"""
-        await ctx.send(f'🏓 Pong! {round(self.client.latency * 1000)}ms 📈')
-        await ctx.send(embed=pe)
+        pe = nextcord.Embed(description=f'🏓 Pong! {round(self.client.latency * 1000)}ms 📈',color=green)
+        await interaction.response.send_message(embed=pe)
 
     @ping.error
     async def inspire_error(self, ctx, error):

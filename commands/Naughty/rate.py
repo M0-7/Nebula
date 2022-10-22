@@ -1,19 +1,20 @@
 import nextcord
 from nextcord.ext import commands
 from config import green
+from nextcord import SlashOption,Interaction
 import random
 
 class Rate(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'rate')
+    @nextcord.slash_command(name = 'rate')
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def rate(self, ctx):
+    async def rate(self, interaction:nextcord.Interaction, arg:str = SlashOption(description="WHat thing is it")):
         """Rates your waifu to settle the long debate"""
         rating = random.randint(1,10)
-        emk = nextcord.Embed(description=(f"M'Lord it is rated {rating}/10 👍"),color=green)
-        await ctx.send(embed=emk)
+        emk = nextcord.Embed(description=(f"M'Lord {arg} is rated {rating}/10 👍"),color=green)
+        await interaction.response.send_message(embed=emk)
 
     @rate.error
     async def rate_error(self, ctx, error):

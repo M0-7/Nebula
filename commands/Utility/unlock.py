@@ -6,16 +6,15 @@ class Unlock(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'unlock')
+    @nextcord.slash_command(name = 'unlock')
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def unlock(self, ctx):
+    async def unlock(self, interaction:nextcord.Interaction):
         """Unlocks the channel for shayan"""
         embed = nextcord.Embed(title="Done!",description="Channel Opened",color = green)
-        await ctx.send(embed=embed, delete_after=3)
-        await ctx.message.delete()
-        drole = nextcord.utils.get(ctx.guild.roles, name = 'Sasta Sherlock')
-        await ctx.channel.set_permissions(drole, view_channel=True)
+        await interaction.response.send_message(embed=embed, delete_after=2)
+        drole = nextcord.utils.get(interaction.guild.roles, name = 'Sasta Sherlock')
+        await interaction.channel.set_permissions(drole, view_channel=True)
         
     @unlock.error
     async def unlock_error(self, ctx, error):

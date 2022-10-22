@@ -1,15 +1,16 @@
 import nextcord
 from nextcord.ext import commands
+from nextcord import Interaction
 
 class Shayan(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = "shayan")
+    @nextcord.slash_command(name = "shayan")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def roblox(self, ctx):
+    async def roblox(self, interaction:nextcord.Interaction):
         """Shayan's profile"""
-        await ctx.send("""Here is the link to Shayan's roblox account:
+        await interaction.response.send_message("""Here is the link to Shayan's roblox account:
 https://www.roblox.com/users/1895622949/profile""")
 
     @roblox.error

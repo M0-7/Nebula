@@ -1,15 +1,16 @@
 import nextcord
 from nextcord.ext import commands
+from nextcord import Interaction
 
 class Reyan(commands.Cog):
     def __init__(self, client):
          self.client = client
 
-    @commands.command(name = "reyan")
+    @nextcord.slash_command(name = "reyan")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def reyan(self, ctx):
+    async def reyan(self, interaction:nextcord.Interaction):
         """Reyan's profile"""
-        await ctx.send("""Here is Reyan's disqus account link used for commenting under anime episodes:
+        await interaction.response.send_message("""Here is Reyan's disqus account link used for commenting under anime episodes:
 https://disqus.com/by/disqus_3jpJF1dk1P""")
 
     @reyan.error

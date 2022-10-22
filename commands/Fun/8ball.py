@@ -1,5 +1,6 @@
-import nextcord
+from nextcord import SlashOption,Interaction
 from nextcord.ext import commands
+import nextcord
 from config import green
 import random
 from Assets.eight_ball import ball_replies
@@ -8,12 +9,13 @@ class Ball(commands.Cog):
     def __init__(self, client): 
          self.client = client
 
-    @commands.command(name = "8ball")
+    @nextcord.slash_command(name = "8ball")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def ball(self, ctx,*,text):
+    async def ball(self, interaction: nextcord.Interaction, arg: str = SlashOption(description="Speak to the 8ball")):
+        """Ask the magik 8ball a question"""
         rolk = random.choice(ball_replies)
-        e = nextcord.Embed(description=(f"{rolk}"),color=green)
-        await ctx.send(embed=e)
+        e = nextcord.Embed(title=f"{arg}",description=(f"{rolk}"),color=green)
+        await interaction.response.send_message(embed=e)
 
     @ball.error
     async def ball_error(self, ctx, error):

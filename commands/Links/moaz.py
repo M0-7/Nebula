@@ -1,15 +1,16 @@
 import nextcord
+from nextcord import Interaction
 from nextcord.ext import commands
 
 class Moaz(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name="moaz")
+    @nextcord.slash_command(name="moaz")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def moaz(self, ctx):
+    async def moaz(self, interaction:nextcord.Interaction):
         """My profile"""
-        await ctx.send("https://moazlion.repl.co")
+        await interaction.response.send_message("https://moazlion.repl.co")
 
     @moaz.error
     async def moaz_error(self, ctx, error):

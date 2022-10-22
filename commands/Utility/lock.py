@@ -1,6 +1,7 @@
 import nextcord
 from nextcord.ext import commands
 from config import green
+from nextcord import Interaction
 
 class Unilock(nextcord.ui.View):
     def __init__(self):
@@ -19,18 +20,17 @@ class Lock(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = 'lock')
+    @nextcord.slash_command(name = 'lock')
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def lock(self, ctx):
+    async def lock(self, interaction:nextcord.Interaction):
         """Locks the channel for shayan"""
-        drole = nextcord.utils.get(ctx.guild.roles, name = 'Sasta Sherlock')
-        await ctx.channel.set_permissions(drole, view_channel=False)
+        drole = nextcord.utils.get(interaction.guild.roles, name = 'Sasta Sherlock')
+        await interaction.channel.set_permissions(drole, view_channel=False)
         embed = nextcord.Embed(title="Channel locked",description="Do *m!unlock* to open the channel or press the button below!",color = green)
         view=Unilock()
-        msg = await ctx.send(embed=embed,view=view)
+        msg = await interaction.response.send_message(embed=embed,view=view)
         await view.wait()
-        await ctx.message.delete()
         await msg.delete()
         
     @lock.error
