@@ -1,9 +1,7 @@
-import neverSleep
 import nextcord,os
 from nextcord.ext import commands,tasks
 from itertools import cycle
 from startup import cls
-from keep_alive import keep_alive
 from config import TOKEN
 
 client = commands.Bot(command_prefix = "m!" ,
@@ -47,5 +45,4 @@ async def on_ready():
     print('{0.user} is now online'.format(client))
     await client.change_presence(activity=nextcord.Game(name="Going to gym"))
 
-keep_alive()
 client.run(TOKEN)
