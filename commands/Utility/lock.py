@@ -23,6 +23,7 @@ class Lock(commands.Cog):
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def lock(self, ctx):
+        """Locks the channel for shayan"""
         drole = nextcord.utils.get(ctx.guild.roles, name = 'Sasta Sherlock')
         await ctx.channel.set_permissions(drole, view_channel=False)
         embed = nextcord.Embed(title="Channel locked",description="Do *m!unlock* to open the channel or press the button below!",color = green)

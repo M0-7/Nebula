@@ -9,6 +9,7 @@ class Avatars(commands.Cog):
     @commands.command(name = "avatar")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def avatar(self,ctx,*,avamember:nextcord.Member=None):
+      """Returns the avatar of the user"""
       pfp = avamember.avatar
       embed = nextcord.Embed(title=f"Avatar of {avamember}",color=green)
       embed.set_image(url=pfp)

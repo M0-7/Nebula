@@ -12,18 +12,8 @@ class Ping(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def ping(self, ctx):
-        await ctx.send("Retreaving the information..........⏳")
-        info = f"""
-__Ping:__  `{round(self.client.latency * 1000)}ms 📈`
-__Users Managed:__ `{len(list(self.client.get_all_members()))} 🐵`
-__CPU Speed:__ `{psutil.cpu_percent(4)} 🤓`
-__Total RAM:__ `{str(psutil.virtual_memory().total)[0]} GB`
-__Free Memory:__ `{int(100 - psutil.virtual_memory()[2])}%`
-__Uptime:__ `{(datetime(1970,1,1) + timedelta(seconds=(time.time() - psutil.boot_time()))).time()} 🖕🏼`
-"""
-        
-        pe = nextcord.Embed(title=f"**Backend Information**",description=info,color = green)
-        await ctx.send('🏓 Pong!')
+        """Shows latency of the bot"""
+        await ctx.send(f'🏓 Pong! {round(self.client.latency * 1000)}ms 📈')
         await ctx.send(embed=pe)
 
     @ping.error

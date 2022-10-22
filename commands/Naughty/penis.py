@@ -10,9 +10,10 @@ class Penis(commands.Cog):
     @commands.command(name = 'penis')
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def penis(self, ctx):
-        rank = random.randint(1,12)
+        """Find out how long your shalonga balonga is"""
+        rank = random.randint(1,10)
         penis = "="
-        ema = nextcord.Embed(description=(f"Your penis 8{penis*rank}D"),color=green)
+        ema = nextcord.Embed(description=(f"Your penis 8{penis*rank}D, {rank} inches"),color=green)
         await ctx.send(embed=ema)
 
     @penis.error

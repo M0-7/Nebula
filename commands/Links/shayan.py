@@ -7,7 +7,8 @@ class Shayan(commands.Cog):
     
     @commands.command(name = "shayan")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def roblox(self, ctx):       
+    async def roblox(self, ctx):
+        """Shayan's profile"""
         await ctx.send("""Here is the link to Shayan's roblox account:
 https://www.roblox.com/users/1895622949/profile""")
 

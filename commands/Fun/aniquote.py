@@ -10,6 +10,7 @@ class Aniquote(commands.Cog):
     @commands.command(name = 'aniquote',aliases = ['aq'])
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def aniquote(self, ctx):
+      """Sends an anime quote"""
       embed=nextcord.Embed(description=(f"**{quote}**"),color=green)
       embed.set_footer(text=f"~{character}")
       await ctx.send(embed=embed)

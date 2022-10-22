@@ -11,6 +11,7 @@ class Ball(commands.Cog):
     @commands.command(name = "8ball")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def ball(self, ctx,*,text):
+        """Ask the magical 8ball a question"""
         rolk = random.choice(ball_replies)
         e = nextcord.Embed(description=(f"{rolk}"),color=green)
         await ctx.send(embed=e)

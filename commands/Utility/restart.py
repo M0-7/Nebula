@@ -11,6 +11,7 @@ class Restart(commands.Cog):
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def restart(self, ctx):
+        """Restarts the bot"""
         embed = nextcord.Embed(title="Restarting myself ⏳",description="Give  me a couple of seconds :).<#870316216571543552> for status.",color = green)
         await ctx.send(embed=embed)
         os.system("clear")

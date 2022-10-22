@@ -8,6 +8,7 @@ class Moaz(commands.Cog):
     @commands.command(name="moaz")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def moaz(self, ctx):
+        """My profile"""
         await ctx.send("https://moazlion.repl.co")
 
     @moaz.error

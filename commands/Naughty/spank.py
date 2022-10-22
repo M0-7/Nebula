@@ -10,6 +10,7 @@ class Spank(commands.Cog):
     @commands.command(name = 'spank')
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def spank(self, ctx,*,Member):
+      """Hits someone in the ass"""
       embed = nextcord.Embed(description=(f"{ctx.author.mention} *spanks* {Member} 😏"),color=green)
       embed.set_image(url=spank_gif)
       await ctx.send(embed=embed)

@@ -9,20 +9,19 @@ class Help(commands.Cog):
     def __init__(self, client): 
          self.client = client
     
-    @commands.command(name = "help")
+    @nextcord.slash_command(name = "help")
     @commands.cooldown(1, 10, commands.BucketType.guild)
-    async def help(self,ctx):
-      ehelp=nextcord.Embed(title="**Mai Commands**", description="__Boku Wa Tobi__ **:)**", color=green)
-      ehelp.set_footer(text="For more help dm Moaz#3688", icon_url=f"{ctx.author.avatar}")
+    async def help(self ,interaction: nextcord.Interaction):
+      """Shows the commands for the bot"""
+      ehelp=nextcord.Embed(title="**Nebula Commands**", description="__Boku Wa Tobi__ **:)**", color=green)
       ehelp.set_image(url=help_img)
-      ehelp.add_field(name="📚 **Phrases[4]**",value="`m!aniquote`, `m!quote`, `m!joke`, `m!roast`", inline=False)
-      ehelp.add_field(name="😊 **Fun[5]**", value="`m!hug`, `m!kiss`, `m!8ball`, `m!meme`, `m!#1`", inline=False)
-      ehelp.add_field(name="😏 **Naughty[5]**", value="`m!penis`, `m!gtest` , `m!rate`, `m!spank`, `m!#69`", inline=False)
+      ehelp.add_field(name="😊 **Fun[5]**", value="``m!aniquote`, m!hug`, `m!kiss`, `m!8ball`", inline=False)
+      ehelp.add_field(name="😏 **Naughty[5]**", value="`m!penis`, `m!gtest` , `m!rate`, `m!spank`", inline=False)
       ehelp.add_field(name="🔗 **Links[4]**", value="`m!moaz`, `m!reyan`, `m!bilal`, `m!shayan`", inline=False)
       ehelp.add_field(name="🧩 **Utility[5]**", value="`m!ping`, `!lock`, `m!unlock`, `m!help`, `m!avatar`, `m!restart`", inline=False)
       ehelp.timestamp = datetime.datetime.utcnow()
-      ehelp.set_thumbnail(url=ctx.guild.icon)
-      await ctx.send(embed=ehelp)
+      ehelp.set_thumbnail(url=interaction.guild.icon)
+      await interaction.response.send_message(embed=ehelp)
 
     @help.error
     async def help_error(self, ctx, error):

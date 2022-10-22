@@ -10,6 +10,7 @@ class Gtest(commands.Cog):
     @commands.command(name = "gtest")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def gtest(self, ctx):
+        """Test how much of a faggot you are"""
         number = random.randint(1,100)
         em = nextcord.Embed(description=(f"You are {number}% gay 🏳️‍🌈"),color=green)
         await ctx.send(embed=em)

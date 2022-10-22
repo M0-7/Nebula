@@ -8,6 +8,7 @@ class Bilal(commands.Cog):
     @commands.command(name = "bilal")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def bilal(self,ctx):
+        """Bilal's profile"""
         await ctx.send("""Here is Bilal´s instagram account:
 https://www.instagram.com/bilal_amin123/""")
 

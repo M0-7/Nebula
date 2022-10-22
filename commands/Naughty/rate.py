@@ -10,6 +10,7 @@ class Rate(commands.Cog):
     @commands.command(name = 'rate')
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def rate(self, ctx):
+        """Rates your waifu to settle the long debate"""
         rating = random.randint(1,10)
         emk = nextcord.Embed(description=(f"M'Lord it is rated {rating}/10 👍"),color=green)
         await ctx.send(embed=emk)

@@ -8,6 +8,7 @@ class Reyan(commands.Cog):
     @commands.command(name = "reyan")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def reyan(self, ctx):
+        """Reyan's profile"""
         await ctx.send("""Here is Reyan's disqus account link used for commenting under anime episodes:
 https://disqus.com/by/disqus_3jpJF1dk1P""")
 

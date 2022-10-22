@@ -11,6 +11,7 @@ class Hug(commands.Cog):
     @commands.command(name = "hug")
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def hug(self, ctx,*,Member):
+        """Aww your feeling lonely?"""
         embed = nextcord.Embed(description=(f"{ctx.author.mention} *hugs* {Member} 🤗 "),colour=green)
         embed.set_image(url=hug_gif)
         await ctx.send(embed=embed)

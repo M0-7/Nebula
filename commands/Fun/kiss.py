@@ -11,6 +11,7 @@ class Kiss(commands.Cog):
     @commands.command(name = 'kiss')
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def kiss(self, ctx,Member):
+      """Gives you a kiss"""
       embed = nextcord.Embed(description=(f"{ctx.author.mention} *kisses* {Member} 😘  "),colour=green)
       embed.set_image(url=kiss_gif)
       await ctx.send(embed=embed)

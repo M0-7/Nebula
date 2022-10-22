@@ -10,6 +10,7 @@ class Unlock(commands.Cog):
     @commands.has_permissions(administrator=True)
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def unlock(self, ctx):
+        """Unlocks the channel for shayan"""
         embed = nextcord.Embed(title="Done!",description="Channel Opened",color = green)
         await ctx.send(embed=embed, delete_after=3)
         await ctx.message.delete()
