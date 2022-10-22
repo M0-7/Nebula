@@ -13,6 +13,7 @@ class Delete(commands.Cog):
         return
       elif "?purge" in message.content:
         return
+      #Removes carl bot from logs
       embeder = nextcord.Embed(title=f"Message deleted in #{message.channel}",description=f"{message.content}",color=teal)
       embeder.set_author(name=f"{message.author.name}",icon_url=f"{message.author.avatar}")
       embeder.timestamp = datetime.datetime.utcnow()

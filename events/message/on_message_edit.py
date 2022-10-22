@@ -9,6 +9,7 @@ class Edit(commands.Cog):
       
     @commands.Cog.listener()
     async def on_message_edit(self, message_before,message_after):
+      #Removes bot from logs
       if message_before.author.bot:
         return
       embedk = nextcord.Embed(title=f"Message edited in #{message_before.channel}",description=f"""
