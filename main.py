@@ -28,9 +28,6 @@ def cog_loader():
   for filename in os.listdir("./commands/Naughty"):
     if filename.endswith(".py"):
       initial_extensions.append("commands.Naughty."+ filename[:-3])
-  for filename in os.listdir("./commands/Phrases"):
-    if filename.endswith(".py"):
-      initial_extensions.append("commands.Phrases."+ filename[:-3])
   for filename in os.listdir("./commands/Utility"):
     if filename.endswith(".py"):
       initial_extensions.append("commands.Utility."+ filename[:-3])
