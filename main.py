@@ -1,10 +1,11 @@
 import nextcord,os
-from nextcord.ext import commands,tasks
+from nextcord.ext import commands
 from itertools import cycle
 from startup import cls
 from config import TOKEN
+from keep_alive import keep_alive
 
-client = commands.Bot(command_prefix = "m!" ,
+client = commands.Bot(
 intents=nextcord.Intents.all(),
 case_insensitive=True)
 
@@ -45,4 +46,5 @@ async def on_ready():
     print('{0.user} is now online'.format(client))
     await client.change_presence(activity=nextcord.Game(name="Going to gym"))
 
+keep_alive()
 client.run(TOKEN)
