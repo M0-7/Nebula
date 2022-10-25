@@ -40,11 +40,21 @@ def cog_loader():
       
 cog_loader()
 
+Nebula = """                                                               
+888b    888 8888888888 888888b.         d8888 
+8888b   888 888        888  "88b       d88888 
+88888b  888 888        888  .88P      d88P888 
+888Y88b 888 8888888    8888888K.     d88P 888 
+888 Y88b888 888        888  "Y88b   d88P  888 
+888  Y88888 888        888    888  d88P   888 
+888   Y8888 888        888   d88P d8888888888 
+888    Y888 8888888888 8888888P" d88P     888 
+"""
 @client.event
 async def on_ready():
     cls()
-    print('{0.user} is now online'.format(client))
-    await client.change_presence(activity=nextcord.Game(name="Going to gym"))
+    print(Nebula)
+    await client.change_presence(activity=nextcord.Game(name="With monkeys"))
 
 keep_alive()
 client.run(TOKEN)
