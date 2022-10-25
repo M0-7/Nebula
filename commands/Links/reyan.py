@@ -2,6 +2,13 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 
+url = "https://disqus.com/by/disqus_3jpJF1dk1P"
+
+class Disqus(nextcord.ui.View):
+  def __init__(self):
+    super().__init__(timeout=90)
+    self.add_item(nextcord.ui.Button(style=nextcord.ButtonStyle.link,label="Open", url=url))
+
 class Reyan(commands.Cog):
     def __init__(self, client):
          self.client = client
@@ -10,8 +17,8 @@ class Reyan(commands.Cog):
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def reyan(self, interaction:nextcord.Interaction):
         """Reyan's profile"""
-        await interaction.response.send_message("""Here is Reyan's disqus account link used for commenting under anime episodes:
-https://disqus.com/by/disqus_3jpJF1dk1P""")
+        view=Disqus()
+        await interaction.response.send_message(url,view=view)
 
     @reyan.error
     async def reyan_error(self, ctx, error):

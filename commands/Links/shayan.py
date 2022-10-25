@@ -2,6 +2,13 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 
+url = "https://www.roblox.com/users/1895622949/profile"
+
+class Roblox(nextcord.ui.View):
+  def __init__(self):
+    super().__init__(timeout=90)
+    self.add_item(nextcord.ui.Button(style=nextcord.ButtonStyle.link,label="Open", url=url))
+
 class Shayan(commands.Cog):
     def __init__(self, client): 
          self.client = client
@@ -10,8 +17,8 @@ class Shayan(commands.Cog):
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def roblox(self, interaction:nextcord.Interaction):
         """Shayan's profile"""
-        await interaction.response.send_message("""Here is the link to Shayan's roblox account:
-https://www.roblox.com/users/1895622949/profile""")
+        view = Roblox()
+        await interaction.response.send_message(url,view=view)
 
     @roblox.error
     async def roblox_error(self, ctx, error):

@@ -2,6 +2,13 @@ import nextcord
 from nextcord import Interaction
 from nextcord.ext import commands
 
+url = "https://moazlion.repl.co"
+
+class Website(nextcord.ui.View):
+  def __init__(self):
+    super().__init__(timeout=90)
+    self.add_item(nextcord.ui.Button(style=nextcord.ButtonStyle.link,label="Open", url=url))
+
 class Moaz(commands.Cog):
     def __init__(self, client): 
          self.client = client
@@ -10,7 +17,8 @@ class Moaz(commands.Cog):
     @commands.cooldown(1, 3, commands.BucketType.user)
     async def moaz(self, interaction:nextcord.Interaction):
         """My profile"""
-        await interaction.response.send_message("https://moazlion.repl.co")
+        view = Website()
+        await interaction.response.send_message(url,view=view)
 
     @moaz.error
     async def moaz_error(self, ctx, error):
