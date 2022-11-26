@@ -1,6 +1,5 @@
 import nextcord,os
 from nextcord.ext import commands
-from itertools import cycle
 from startup import cls
 from config import TOKEN
 from keep_alive import keep_alive
