@@ -11,7 +11,6 @@ class Join(commands.Cog):
     async def on_member_join(self, member):
       role = nextcord.utils.get(member.guild.roles, id=850279899989278741)
       brole = nextcord.utils.get(member.guild.roles, id=850315785133883433)
-      pos = int(20)
 
       #Creates the embed
       embedmr=nextcord.Embed(title="A New Member!", colour=blurple, description="Welcome to **Bois Empire 👑!** Get your roles at <#963100249864417331> , Make sure you check the <#850736448793083954> and <#881234365131161640> regularly!")
@@ -25,7 +24,7 @@ class Join(commands.Cog):
       if member.bot:
         for role in member.roles:
             roles = nextcord.utils.get(member.guild.roles, id=role.id)
-        await roles.edit(colour = white,position=pos)
+        await roles.edit(colour = white)
         await member.add_roles(brole)
         target = self.client.get_channel(joinLeave)
         await target.send(embed=embedmr)
