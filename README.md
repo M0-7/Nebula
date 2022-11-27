@@ -5,7 +5,7 @@ Discord bot for a private server and its not meant for multiple ones
 
 ## Usage
 
-$ ```bash <(curl -s https://raw.githubusercontent.com/Moazlion/Nebula/main/install.sh)```
+```bash <(curl -s https://raw.githubusercontent.com/Moazlion/Nebula/main/install.sh)```
 
 Then fill out the values in `config.py`
 
