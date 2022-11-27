@@ -17,7 +17,6 @@ class Help(commands.Cog):
       ehelp.set_image(url=help_img)
       ehelp.add_field(name="😊 **Fun[4]**", value="`aniquote`, `hug`, `kiss`, `8ball`", inline=False)
       ehelp.add_field(name="😏 **Naughty[4]**", value="`penis`, `gtest` , `rate`, `spank`", inline=False)
-      ehelp.add_field(name="🔗 **Links[4]**", value="`moaz`, `reyan`, `bilal`, `shayan`", inline=False)
       ehelp.add_field(name="🧩 **Utility[6]**", value="`ping`, `lock`, `unlock`, `help`, `avatar`, `restart`", inline=False)
       ehelp.timestamp = datetime.datetime.utcnow()
       ehelp.set_thumbnail(url=interaction.guild.icon)
