@@ -7,7 +7,7 @@ Discord bot for a private server and its not meant for multiple ones
 
 ```bash <(curl -s https://raw.githubusercontent.com/Moazlion/Nebula/main/install.sh)```
 
-Then fill out the values in `config.py`
+Then fill out the values in `config` and rename to `config.py`
 
 After that the bot should come online
 
