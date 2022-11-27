@@ -1,6 +1,6 @@
 import nextcord
 from nextcord.ext import commands
-from config import blurple,joinLeave,white,chatchannel,announcement,bot_role,member_role
+from config import blurple,joinLeave,white,chatchannel,announcement,bot_role,member_role,join_img
 import datetime
 
 class Join(commands.Cog):
