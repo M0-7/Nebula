@@ -1,9 +1,7 @@
 import nextcord
 from nextcord.ext import commands
-from config import green
+from config import green,spank_gif
 from nextcord import SlashOption,Interaction
-
-spank_gif = "https://media.giphy.com/media/xX9tcQCgPRmDK/giphy.gif"
 
 class Spank(commands.Cog):
     def __init__(self, client): 

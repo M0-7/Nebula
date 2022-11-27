@@ -1,9 +1,7 @@
 import nextcord
 from nextcord import SlashOption,Interaction
 from nextcord.ext import commands
-from config import green
-
-kiss_gif = "https://media.giphy.com/media/LJOW8CJOpyjeybrxhb/giphy.gif"
+from config import green,kiss_gif
 
 class Kiss(commands.Cog):
     def __init__(self, client): 

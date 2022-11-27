@@ -1,9 +1,7 @@
 import nextcord
 from nextcord import SlashOption,Interaction
 from nextcord.ext import commands
-from config import green
-
-hug_gif = "https://media.giphy.com/media/SZ9PmtBJL2VRGvau1m/giphy.gif"
+from config import green,hug_gif
 
 class Hug(commands.Cog):
     def __init__(self, client): 

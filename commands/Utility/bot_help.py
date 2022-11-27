@@ -1,9 +1,7 @@
 import nextcord
 from nextcord.ext import commands
-from config import green
+from config import green,help_img
 import datetime
-
-help_img = "https://wallup.net/wp-content/uploads/2015/12/65523-anime-anime_girls-school_uniform-thigh-highs-long_hair-brunette-Amagi_Brilliant_Park-Sento_Isuzu-stockings.jpg"
 
 class Help(commands.Cog): 
     def __init__(self, client): 
