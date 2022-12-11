@@ -11,11 +11,11 @@ class Ball(commands.Cog):
 
     @nextcord.slash_command(name = "8ball")
     @commands.cooldown(1, 3, commands.BucketType.user)
-    async def ball(self, interaction: nextcord.Interaction, arg: str = SlashOption(description="Speak to the 8ball")):
+    async def ball(self, interaction: nextcord.Interaction, question: str = SlashOption(description="Speak to the 8ball")):
         """Ask the magik 8ball a question"""
         rolk = random.choice(ball_replies)
-        e = nextcord.Embed(title=f"{arg}",description=(f"{rolk}"),color=green)
-        await interaction.response.send_message(embed=e)
+        e = nextcord.Embed(description=(f"🎱 {rolk}"))
+        await interaction.response.send_message(f"> {question}",embed=e)
 
     @ball.error
     async def ball_error(self, ctx, error):
